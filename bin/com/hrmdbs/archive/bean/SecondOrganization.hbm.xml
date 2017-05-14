@@ -1,0 +1,15 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hrmdbs.archive.bean">
+	<class name="SecondOrganization" table="SECONDORGANIZATION">
+		<id name="id" column="ID">
+			<!-- hibernate使用内部策略，帮你产生id主键值 -->
+			<generator class="increment" />
+		</id>
+		<property name="secondOrganizationName" column="SECONDORGANIZATIONNAME"
+			unique="true" />
+		<many-to-one name="topOrganization" column="topOrganizationId"
+			cascade="save-update" lazy="false"></many-to-one>
+	</class>
+</hibernate-mapping>

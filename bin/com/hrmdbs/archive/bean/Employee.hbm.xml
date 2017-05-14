@@ -1,0 +1,59 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hrmdbs.archive.bean">
+	<class name="Employee" table="USERINFO">
+		<id name="id" column="ID">
+			<!-- hibernate使用内部策略，帮你产生id主键值 -->
+			<generator class="increment" />
+		</id>
+		<property name="hrid" column="HRID" />
+		<property name="checked" column="CHECKED" />
+		<property name="name" column="NAME" />
+		<property name="Email" column="EMAIL" />
+		<property name="Phone" column="PHONE" />
+		<property name="qq" column="QQ" />
+		<property name="selPhone" column="SELPHONE" />
+		<property name="address" column="ADDRESS" />
+		<property name="PostNumber" column="POSTNUMBER" />
+		<property name="nationality" column="NATIONALITY" />
+		<property name="bornAddress" column="BORNADDRESS" />
+		<property name="birthday" column="BIRTHDAY" />
+		<property name="faith" column="FAITH" />
+		<property name="politicsStatus" column="POLITICSSTATUS" />
+		<property name="identityId" column="IDENTITYNUMBER" />
+		<property name="age" column="AGE" />
+		<property name="education" column="EDUCATIONID" />
+		<property name="educationYears" column="EDUCATIONYEARS" />
+		<property name="bankName" column="BANKNAME" />
+		<property name="bankNumber" column="BANKNUMBER" />
+		<property name="registTime" column="REGISTTIME" />
+		<property name="hobby" column="HOBBY" />
+		<property name="speciality" column="SPECIALITY" />
+		<property name="perRecord" column="PERRECORD" />
+		<property name="familyRelation" column="FAMILYRELATION" />
+		<property name="remark" column="REMARK" />
+		<property name="nation" column="NATIONID" />
+		<property name="socialSecurityID" column="SOCIALSECURITYNUMBER" />
+		<property name="major" column="MAJOR" />
+		<property name="registor" column="REGISTOR" />
+		<property name="deleted" column="DELETED"></property>
+		<property name="sex" column="SEX"></property>
+
+
+		<many-to-one name="topOrganization" column="TOPORGANIZATIONID"
+			cascade="save-update" lazy="false" />
+		<many-to-one name="secondOrganization" column="SECONDORGANIZATIONID"
+			cascade="save-update" lazy="false" />
+		<many-to-one name="thirdOrganization" column="THIRDORGANIZATIONID"
+			cascade="save-update" lazy="false" />
+		<many-to-one name="positionSorted" column="POSITIONSORTEDID"
+			cascade="save-update" lazy="false" />
+		<many-to-one name="positionName" column="POSITIONNAMEID"
+			cascade="save-update" lazy="false" />
+		<many-to-one name="professionalTitle" column="PROFESSIONALTITLEID"
+			cascade="save-update" lazy="false" />
+		<many-to-one name="salaryStand" column="SALARYREGISTINFOID"
+			cascade="save-update" lazy="false" />
+	</class>
+</hibernate-mapping>

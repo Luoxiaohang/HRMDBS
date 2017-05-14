@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hrmdbs.salary.bean">
+	<class name="SalaryRegistInfo" table="SALARYREGISTINFO">
+		<id column="ID" name="id">
+			<!-- hibernate使用内部策略，帮你产生id主键值 -->
+			<generator class="native" />
+		</id>
+		<property name="reChecked" column="RECHECKED" />
+		<property name="reCheckRemark" column="RECHECKREMARK" />
+		<property name="salaryFormulater" column="SALARYFORMULATER" />
+		<property name="salaryRegistor" column="SALARYREGISTOR" />
+		<property name="salaryRegistTime" column="SALARYREGISTTIME" />
+		<property name="salaryStandName" column="SALARYSTANDNAME" />
+		<property name="totalMoney" column="TOTALMONEY" />
+	</class>
+</hibernate-mapping>

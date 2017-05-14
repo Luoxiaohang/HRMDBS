@@ -1,0 +1,16 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hrmdbs.salary.bean">
+	<class name="Bonus" table="BONUS">
+		<id name="id" column="ID">
+			<!-- hibernate使用内部策略，帮你产生id主键值 -->
+			<generator class="native" />
+		</id>
+		<property name="bonus" column="BONUS" />
+		<property name="deductedBonus" column="DEDUCTEDBONUS" />
+		<property name="rechecked" column="RECHECKED" />
+		<many-to-one name="employee" column="EMPLOYEEID" lazy="false"></many-to-one>
+	</class>
+</hibernate-mapping>

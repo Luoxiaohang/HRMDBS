@@ -1,0 +1,17 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hrmdbs.salary.bean">
+	<class name="SalaryStand" table="SALARYSTAND">
+		<id name="id" column="ID">
+			<!-- hibernate使用内部策略，帮你产生id主键值 -->
+			<generator class="native" />
+		</id>
+		<property name="money" column="MONEY"></property>
+		<many-to-one name="salaryItem" column="SALARYITEM" lazy="false"></many-to-one>
+
+		<many-to-one name="salaryRegistInfo" column="SALARYREGISTINFO"
+			cascade="save-update" lazy="false"></many-to-one>
+	</class>
+</hibernate-mapping>
